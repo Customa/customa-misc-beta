@@ -1,0 +1,22 @@
+{
+  "name": "customa-misc-beta",
+  "version": "1.0.0",
+  "description": "Project for building and generating all Customa Assets",
+  "main": "index.js",
+  "scripts": {
+    "generate:font": "node ci/font-generation/index.js",
+    "format:js": "prettier ci/**/*.{js,json} *.md --write"
+  },
+  "repository": "git+https://github.com/customa/customa-misc.git",
+  "author": "ghostlydilemma <ghostly.dilemma@gmail.com>",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/customa/customa-misc/issues"
+  },
+  "homepage": "https://github.com/customa/customa-misc#readme",
+  "devDependencies": {
+    "fontello-cli": "^0.6.2",
+    "glob": "^7.2.0",
+    "prettier": "^2.5.1"
+  }
+}

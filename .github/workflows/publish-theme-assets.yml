@@ -1,7 +1,4 @@
-# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
-
-name: Build and Deploy
+name: Publish Theme Assets
 on:
   push:
     branches: [ main ]
@@ -10,15 +7,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install and Build 🛎🔧
-        uses: actions/checkout@v2.3.1
+        uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '17'
+          check-latest: true
+      - run: yarn install --frozen-lockfile
+      - run: yarn run generate:font
       - name: Deploy Assets 🚀
-        uses: JamesIves/github-pages-deploy-action@4.1.3
+        uses: JamesIves/github-pages-deploy-action@4.1.8
         with:
           branch: pages # The branch the action should deploy to.
           folder: logos # The folder the action should deploy.
           target-folder: logos
       - name: Deploy Logos 🚀
-        uses: JamesIves/github-pages-deploy-action@4.1.3
+        uses: JamesIves/github-pages-deploy-action@4.1.8
         with:
           branch: pages # The branch the action should deploy to.
           folder: assets # The folder the action should deploy.
