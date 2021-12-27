@@ -14,13 +14,21 @@ jobs:
           check-latest: true
       - run: yarn install --frozen-lockfile
       - run: yarn run generate:font
-      - name: Deploy Assets 🚀
+      - run: mkdir docs
+      - run: cp dump/customa-icon-font-codes.css docs/customa-icon-font-codes.css
+      - name: Deploy Logos 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.8
         with:
           branch: pages # The branch the action should deploy to.
           folder: logos # The folder the action should deploy.
           target-folder: logos
-      - name: Deploy Logos 🚀
+      - name: Deploy Documentation 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.8
+        with:
+          branch: pages # The branch the action should deploy to.
+          folder: docs # The folder the action should deploy.
+          target-folder: docs
+      - name: Deploy Assets 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.8
         with:
           branch: pages # The branch the action should deploy to.
