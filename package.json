@@ -7,13 +7,13 @@
     "generate:font": "node ci/font-generation/index.js",
     "format:js": "prettier ci/**/*.{js,json} *.md --write"
   },
-  "repository": "git+https://github.com/customa/customa-misc.git",
+  "repository": "git+https://github.com/customa/customa-misc-beta.git",
   "author": "ghostlydilemma <ghostly.dilemma@gmail.com>",
   "license": "Unlicense",
   "bugs": {
-    "url": "https://github.com/customa/customa-misc/issues"
+    "url": "https://github.com/customa/customa-misc-beta/issues"
   },
-  "homepage": "https://github.com/customa/customa-misc#readme",
+  "homepage": "https://github.com/customa/customa-misc-beta#readme",
   "devDependencies": {
     "fontello-cli": "^0.6.2",
     "glob": "^7.2.0",
